@@ -1,0 +1,14 @@
+# common은 개발과 실제 서비스에서 필요로하는 모듈? 을 모아놓는곳 개발과 실서비스에 사용할 것들은
+# dev,prod파일에 이 common파일을 import하고 추가로 쓰면된다   dev,pord.txt 파일들어가면 알거임 뭔소리인지
+#
+#
+
+
+##django~=3.0.0
+djangorestframework     ## 데이터를 json으로 변환하여 API를 만드는 프레임워크 중요!!!
+djangorestframework-jwt ##토른 인증???
+django-cors-headers     ## 리액트용 개발 포트는 3000번이고 장고 개발포트는 보통 8000대인데 API를 넘겨주면
+                        ## 서로 포트가 안맞고 여러 에러사항이 있어서 그것을 해결해주는?? -- 강의 중 설명..--
+
+#django-pydenticon      ## 랜덤으로 이미지생성해주는거 GITHUB에  프로필그림처럼
+pillow                  ##사진 사용할려면 필수!
