@@ -8,8 +8,14 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ["photo_tag", "title"]
     list_display_links = ["title"]
 
+    
     def photo_tag(self, post):
-        return mark_safe(f"<img src={post.photo.url} style='width: 100px;' />")
+         if post.photo:
+            return mark_safe(f"<img src={post.photo.url} style='width: 100px;' />")
+         return 'no photo'
+
+
+
 
 
 

@@ -12,7 +12,7 @@ class Post(TimestampedModel):
     # author = models.ForeignKey(
     #     settings.AUTH_USER_MODEL, on_delete=models.CASCADE
     # )
-    photo = models.ImageField(upload_to="notice/post/%Y/%m")
+    photo = models.ImageField(blank = True ,upload_to="notice/post/%Y/%m")
     title = models.CharField(max_length=30)
     content = models.TextField(max_length=400)
 
