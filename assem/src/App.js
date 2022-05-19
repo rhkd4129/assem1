@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>리액트 설치 확인</h1>
-      </div>
-    );
-  }
+import Project from './components/Project';
+import Calender from './routes/Calender';
+import Home from './routes/Home';
+import Reference from './routes/Reference';
+
+function App() {
+  return (
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/project' element={<Project />} />
+        <Route path='/calender' element={<Calender />} />
+        <Route path='/reference' element={<Reference />} />
+      </Routes>
+  );
 }
 
 export default App;
