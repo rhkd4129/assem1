@@ -1,16 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import HeroImage from '../components/HeroImage'
-import ProjectSection from '../components/Project'
+import React from 'react';
+import Footer from '../components/Footer';
+import HeroImage from '../components/HeroImage';
+import Navbar from '../components/Navbar';
 
 const Project = () => {
     return (
         <div>
             <Navbar />
-            <ProjectSection />
-            <HeroImage heading='Project.' text='Choose your trip.' />
-            <Footer />
+            <HeroImage heading='프로젝트' text='이미지 추후 수정' />
+            <Footer/>
         </div>
     )
 }
