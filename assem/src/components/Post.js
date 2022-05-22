@@ -1,11 +1,16 @@
 import React from "react";
 
 function Post( {post}){
-    const { title,photo} = post;
+    const { title, photo } = post;
     return( 
-        <div >
-            <img src ={photo} alt = {title}/>
-            {title} 
+        <div style={
+            {
+                color: "#fff",
+                marginTop: "4rem"
+            }
+        }>
+            <img src ={ photo } alt = { title }/>
+              {title}
         </div>
         );
 }
