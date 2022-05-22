@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import "./ArticleStyles.css";
+import "./Article.module.css";
 
 function Article() {
     const [users, setUsers] = useState(null);
@@ -26,15 +26,15 @@ function Article() {
             fetchUsers();
         }, []);
 
-    // if (loading) return <div>로딩중..</div>
-    // if (error) return <div>에러가 발생했습니다</div>
+    if (loading) return <div>로딩중..</div>
+    if (error) return <div>에러가 발생했습니다</div>
     if (!users) return null;
     return (
         <React.Fragment>
             <div className="ArticleSection">
-            <h1 className="ArticleTitle">
-           공지사항
-        </h1>
+                <h2 className="ArticleTitle">
+                공지사항
+                </h2>
             </div>
         </React.Fragment>
     );
