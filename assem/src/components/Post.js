@@ -10,7 +10,7 @@ function Post( {post}){
             }
         }>
             <img src ={ photo } alt = { title }/>
-            {title} 
+              {title}
         </div>
         );
 }
