@@ -3,6 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+## 22-05-24
+- 게시판 퍼블리싱
+- 게시글 api/posts 받아오기
+
 ## Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
