@@ -1,43 +1,47 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import "./Article.module.css";
+import React, { useState, useEffect } from 'react';
+import Axios  from 'axios';
+import ArticleTable from './Table/ArticleTable';
+import ArticleTableColumn from './Table/ArticleTableColumn';
+import ArticleTableRow from './Table/ArticleTableRow';
+import Post from './Post';
+import { Link } from 'react-router-dom';
 
-function Article() {
-    const [users, setUsers] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+const apiUrl = "http://localhost:8000/notice/api/posts";
 
-        const fetchUsers = async () => {
-            try {
-                setError(null);
-                setUsers(null);
-                setLoading(true);
-                const response = await axios.get(
-                    'http://localhost:8000/notice/api/posts'
-                );
-                setUsers(response.data);
-            } catch (e) {
-                setError(e);
-            }
-            setLoading(false);
-        };
-
+const Article = props => {
+    const [postList, setPostList] = useState([]);
+    
         useEffect(() => {
-            fetchUsers();
+            Axios.get(apiUrl)
+                .then(response=>{
+                    const {data}  = response;
+                    console.log("loaded response", response);    
+                    setPostList(data)
+                })
+                .catch(error => {})
+            console.log("mounted");
         }, []);
 
-    if (loading) return <div>로딩중..</div>
-    if (error) return <div>에러가 발생했습니다</div>
-    if (!users) return null;
-    return (
-        <React.Fragment>
-            <div className="ArticleSection">
-                <h2 className="ArticleTitle">
-                공지사항
-                </h2>
-            </div>
-        </React.Fragment>
-    );
-}
+  return (
+    <div className='Article-table'>
+        <ArticleTable headersName={['#', '제목', '등록일', '작성자']}>
+      {
+          postList ? postList.map(( post ) => {
+              return (
+                  <ArticleTableRow key={post}>
+                      <ArticleTableColumn>{ post.id }</ArticleTableColumn>
+                      <ArticleTableColumn>
+                          <Link to={`/ArticleViews/${post.id}`}>{ post.title }</Link>
+                      </ArticleTableColumn>
+                      <ArticleTableColumn>{ post.created_at }</ArticleTableColumn>
+                      <ArticleTableColumn>Assem</ArticleTableColumn>
+                  </ArticleTableRow>
+              )
+          }) : ''
+      }
+      </ArticleTable>
+    </div>
+  )
+  }
 
-export default Article;
+export default Article;	
