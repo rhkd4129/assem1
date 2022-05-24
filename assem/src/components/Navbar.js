@@ -29,7 +29,7 @@ const Navbar = () => {
                    <Link to='/Project'>프로젝트</Link>
                </li>
                <li>
-                   <Link to='/Calender'>캘린더</Link>
+                   <Link to='/Calendar'>캘린더</Link>
                </li>
                <li>
                    <Link to='/Reference'>자료실</Link>
