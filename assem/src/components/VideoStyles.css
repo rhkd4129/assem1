@@ -49,3 +49,15 @@
         margin-bottom: 1.6rem;
     }
 }
+
+.hero .team {
+    bottom: 0;
+    right: 10px;
+    position: absolute;
+}
+
+.hero .team .name {
+    vertical-align: bottom;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

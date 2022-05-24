@@ -1,6 +1,6 @@
 .hero-img {
     background: rgba(0,0,0,.3);
-    height: 50vh;
+    height: 40vh;
     width: 100%;
     position: relative;
 }
@@ -8,7 +8,7 @@
 /* background img는 변동 있을 수 있음 */
 .hero-img:before {
     content:'';
-    background: url('../assets/heroImg2.jpg') no-repeat center center/cover; 
+    background: url('../assets/heroImg3.jpg') no-repeat center center/cover; 
     height: 100%;
     width: 100%;
     position: absolute;
