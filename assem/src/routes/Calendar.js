@@ -9,7 +9,7 @@ const Calender = () => {
     return (
         <div>
             <Navbar />
-            <HeroImage heading='Calender' text='캘린더 퍼블리싱 진행 중' />
+            <HeroImage heading='Calender' text='캘린더 퍼블리싱' />
             <CalendarSection />
             <Footer />
         </div>

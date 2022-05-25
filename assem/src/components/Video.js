@@ -19,7 +19,7 @@ const Video = () => {
                 </div> */}
             </div>
             <div className='team'>
-                <p className='name'>이광현 이용욱 김아영</p>
+                <p className='name'>이광현 지용욱 김아영</p>
             </div>
         </div>
     )
