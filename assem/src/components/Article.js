@@ -3,8 +3,8 @@ import Axios  from 'axios';
 import ArticleTable from './Table/ArticleTable';
 import ArticleTableColumn from './Table/ArticleTableColumn';
 import ArticleTableRow from './Table/ArticleTableRow';
-import Post from './Post';
 import { Link } from 'react-router-dom';
+import dateFormat from '../utils/dateFormat';
 
 const apiUrl = "http://localhost:8000/notice/api/posts";
 
@@ -33,7 +33,7 @@ const Article = props => {
                       <ArticleTableColumn>
                           <Link to={`/ArticleViews/${post.id}`}>{ post.title }</Link>
                       </ArticleTableColumn>
-                      <ArticleTableColumn>{ post.created_at }</ArticleTableColumn>
+                      <ArticleTableColumn>{dateFormat( post.created_at, "yyyy-MM-dd" )}</ArticleTableColumn>
                       <ArticleTableColumn>Assem</ArticleTableColumn>
                   </ArticleTableRow>
               )
