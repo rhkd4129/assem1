@@ -33,9 +33,9 @@ INSTALLED_APPS = [
     "corsheaders",    
     # "django_pydenticon",
     "rest_framework",
-    
     # local apps
     # "accounts",
+    'accounts',
     'notice',
 ]
 
@@ -103,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
+AUTH_USER_MODEL = "accounts.User"
+
+
 TIME_ZONE = "UTC"
 
 USE_I18N = True
@@ -123,3 +126,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 ## static 과 MEDIA기본 루트 설정 실서비스가면 다시해야된다는데 그건 나중에 ^^
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ##
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (['rest_framework.permissions.IsAuthenticated',]),
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#     ],
+# }
+REST_FRAMEWORK = {
+    #IsAuthenticated
+
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny',],
+    'DEFAULT_AUTHENTICATION_CLASSES': [ 
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',],
+}
+
+JWT_AUTH = {
+    "JWT_SECRET_KEY": SECRET_KEY,
+    "JWT_ALGORITHM": "HS256",
+    'JWT_ALLOW_REFRESH': True,
+    "JWT_EXPIRATION_DELTA": timedelta(days=7),
+    "JWT_REFRESH_EXPIRATION_DELTA": timedelta(days=28),
+}

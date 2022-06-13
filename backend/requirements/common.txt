@@ -3,7 +3,7 @@
 #
 ##django~=3.0.0
 djangorestframework     ## 데이터를 json으로 변환하여 API를 만드는 프레임워크 중요!!!
-djangorestframework-jwt ##토른 인증???
+djangorestframework-jwt ## 토큰 인증???
 django-cors-headers     ## 리액트용 개발 포트는 3000번이고 장고 개발포트는 보통 8000대인데 API를 넘겨주면
                         ## 서로 포트가 안맞고 여러 에러사항이 있어서 그것을 해결해주는?? -- 강의 중 설명..--
 #django-pydenticon      ## 랜덤으로 이미지생성해주는거 GITHUB에  프로필그림처럼
